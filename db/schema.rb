@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806051650) do
+ActiveRecord::Schema.define(version: 20160810205210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "blogs", force: :cascade do |t|
     t.string   "blog_name"
-    t.string   "custom_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "owner"
+    t.string   "slug"
   end
+
+  add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
