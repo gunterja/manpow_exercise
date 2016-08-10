@@ -1,12 +1,12 @@
 <%= form_for :blog, url: blogs_path do |f| %>
   <p>
     <%= f.label :blog_name %><br>
-    <%= f.text_field :blog_name %>
+    <%= f.text_field :blog_name, :size => 80, placeholder: "What should we name your Blog?" %>
   </p>
 
   <p>
     <%= f.label :slug, "Custom URL -- Enter a custom slug for your blog(ex. aogra-forum.com/myblog, where 'myblog' will be your custom url)" %><br>
-    <%= f.text_field :slug %>
+    <%= f.text_field :slug, :size => 80, placeholder: "Make sure you like the URL you choose. You won't be able to change it" %>
   </p>
 
   <p>
