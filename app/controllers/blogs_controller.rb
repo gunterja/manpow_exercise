@@ -27,6 +27,17 @@ class BlogsController < ApplicationController
     end
   end
 
+  def destroy
+    @blog = Blog.friendly.find(params[:id])
+    @blog.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+      format.js {}
+      format.json { head :no_content }
+    end
+  end
+
   private
 
     def blog_params
