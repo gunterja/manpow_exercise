@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index, :show]
+
   def index
     @blogs = Blog.all
   end
@@ -13,7 +15,8 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
+    @blog.owner = current_user.id
+    
     respond_to do |format|
       if @blog.save
         format.html { redirect_to blogs_path, notice: 'Blog was successfully created.' }
@@ -30,7 +33,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.friendly.find(params[:id])
     @blog.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.js {}
