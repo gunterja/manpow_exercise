@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit({ roles: [] }, :first_name, :last_name, :email, :password,
     :password_confirmation) }
 
-   devise_parameter_sanitizer.for(:account_update) { |u| u.permit({ roles: [] }, :email, :password,
+   devise_parameter_sanitizer.for(:account_update) { |u| u.permit({ roles: [] }, :first_name, :last_name, :email, :password,
    :password_confirmation, :current_password) }
+  end
 end
