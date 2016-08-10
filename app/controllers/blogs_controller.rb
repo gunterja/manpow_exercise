@@ -7,6 +7,10 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
+  def show
+    @blog = Blog.friendly.find(params[:id])
+  end
+
   def create
     @blog = Blog.new(blog_params)
 
@@ -26,6 +30,6 @@ class BlogsController < ApplicationController
   private
 
     def blog_params
-      params.require(:blog).permit(:blog_name, :custom_url)
+      params.require(:blog).permit(:blog_name, :slug)
     end
 end

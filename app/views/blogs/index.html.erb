@@ -2,5 +2,5 @@
 
 <% @blogs.each do |blog| %>
   <%= blog.blog_name %>
-  <%= blog.owner %>
+  <%= link_to "View", blog %>
 <% end %>
