@@ -1,6 +1,7 @@
 <h1>Listing Blogs</h1>
 
-<% @blogs.each do |blog| %>
-  <%= blog.blog_name %>
-  <%= link_to "View", blog %>
-<% end %>
+<ul>
+  <% @blogs.each do |blog| %>
+    <li><%= blog.blog_name %> -- <%= link_to "View", blog %></li>
+  <% end %>
+</ul>
