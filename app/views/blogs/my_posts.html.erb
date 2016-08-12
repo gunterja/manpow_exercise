@@ -1,0 +1,8 @@
+<% current_user.blog.posts.each do |post| %>
+  <li>
+    <h3><%= post.title %></h3>
+    <p>
+      <%= post.body %>
+    </p>
+  </li>
+<% end %>
