@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @blog = Blog.friendly.find(params[:blog_id])
   end
 
   # GET /posts/new
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @blog = Blog.friendly.find(params[:blog_id])
   end
 
   # POST /posts
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
   def create
     blog = Blog.friendly.find(params[:blog_id])
     @post = Post.new(post_params)
+    @post.blog_id = blog.id
 
     respond_to do |format|
       if @post.save
@@ -72,6 +75,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.fetch(:post, {})
+      # params.fetch(:post, {})
+      params.require(:post).permit(:title, :body, :blog_id)
     end
 end
