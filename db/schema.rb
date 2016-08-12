@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810221605) do
+ActiveRecord::Schema.define(version: 20160812012953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160810221605) do
     t.string   "blog_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "owner"
+    t.integer  "user_id"
     t.string   "slug"
   end
 
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20160810221605) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "blogs", "users", column: "owner", on_delete: :cascade
+  add_foreign_key "blogs", "users", on_delete: :cascade
   add_foreign_key "comments", "posts"
   add_foreign_key "posts", "blogs"
 end
