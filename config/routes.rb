@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :posts
   end
+
+  get 'my_posts' => 'blogs#my_posts'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

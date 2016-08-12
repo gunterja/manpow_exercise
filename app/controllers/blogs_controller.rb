@@ -1,6 +1,10 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
+  def my_posts
+    
+  end
+
   def index
     @blogs = Blog.all
   end
@@ -16,7 +20,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.owner = current_user.id
-    
+
     respond_to do |format|
       if @blog.save
         format.html { redirect_to blogs_path, notice: 'Blog was successfully created.' }
