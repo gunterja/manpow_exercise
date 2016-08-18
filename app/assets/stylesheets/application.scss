@@ -16,3 +16,10 @@
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+
+/* ==Navbar Override== */
+
+/* Remove border-radius from navbar */
+nav.navbar.navbar-default {
+  border-radius: 0 !important;
+}
