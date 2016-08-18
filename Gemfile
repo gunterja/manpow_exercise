@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
-# Custom gem list
+
+gem 'redcarpet' # Markdown parser and renderer
+gem 'coderay' # Allows for syntax highlighting
 gem 'friendly_id' # For creating custom slugs
 gem 'devise' # User authentication
-
-
-# Core gem list
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -24,4 +23,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
+end
+
+group :production do
+  gem 'rails_12factor' # Heroku helper
 end
