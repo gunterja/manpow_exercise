@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'bootstrap-sass' # Incorporating Bootstrap 
 gem 'redcarpet' # Markdown parser and renderer
 gem 'coderay' # Allows for syntax highlighting
 gem 'friendly_id' # For creating custom slugs
