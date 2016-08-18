@@ -8,12 +8,18 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' %>
+<!-- Navbar Section -->
+<% if user_signed_in? %>
+  <%= render 'layouts/navbar' %>
+<% else %>
+  <%= render 'layouts/navbar-default' %>
+<% end %><!-- End Navbar Section -->
 
+<!-- Turbolinks <body>swap & Flash Messages -->
 <div class="container">
   <%= flash_messages %>
   <%= yield %>
-</div>
+</div><!-- End Turbolinks <body>swap & Flash section -->
 
 </body>
 </html>
