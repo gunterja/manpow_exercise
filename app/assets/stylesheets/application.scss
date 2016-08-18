@@ -17,19 +17,14 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
-/* ==Bootstrap Overrides== */
+/* ==Bootstrap Overrides & Extensions== */
 
 /* Remove border-radius from navbar */
 nav.navbar.navbar-default {
   border-radius: 0 !important;
 }
 
-
-
-/* ==Custom Styles== */
-
 /* Extend Bootstrap Classes to cover all Flash-types */
-
 .alert-alert {
   @extend .alert-danger;
 }
@@ -37,3 +32,6 @@ nav.navbar.navbar-default {
 .alert-notice {
   @extend .alert-warning;
 }
+
+
+/* ==Custom Styles== */
