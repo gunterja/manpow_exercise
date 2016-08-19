@@ -2,7 +2,6 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def my_posts
-    
   end
 
   def index
@@ -19,7 +18,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.owner = current_user.id
+    @blog.user_id = current_user.id
 
     respond_to do |format|
       if @blog.save
