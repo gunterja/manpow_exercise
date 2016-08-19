@@ -2,7 +2,6 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def my_posts
-
   end
 
   def index
@@ -48,6 +47,6 @@ class BlogsController < ApplicationController
   private
 
     def blog_params
-      params.require(:blog).permit(:blog_name, :slug)
+      params.require(:blog).permit(:blog_name, :slug, :user_id)
     end
 end

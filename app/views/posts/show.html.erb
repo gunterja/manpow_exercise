@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<p><%= markdown(@post.body) %></p>
 
-<%= link_to 'Edit', edit_blog_post_path(@blog, @post) %> |
-<%= link_to 'Back', blog_posts_path(@blog) %>
+<%= link_to 'Edit', edit_blog_post_path(@blog, @post), class: 'btn btn-default' %> |
+<%= link_to 'Back', blog_posts_path(@blog), class: 'btn btn-default' %>

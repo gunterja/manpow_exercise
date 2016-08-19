@@ -1,3 +1,4 @@
+<h1><%= current_user.blog.blog_name %></h1>
 <% current_user.blog.posts.each do |post| %>
   <li>
     <h3><%= post.title %></h3>

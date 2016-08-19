@@ -1,18 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'New Post', new_blog_post_path, class: 'btn btn-default pull-right' %>
 
 <h1>Listing Posts</h1>
 
+
+  <div class="well">
     <% @posts.each do |post| %>
-      <div class="">
-        <h2><%= post.title %></h2>
-        <p><%= post.body %></p>
-        <br>
-        <%= link_to 'Show', blog_post_path(post.blog, post) %>
-        <%= link_to 'Edit', edit_blog_post_path(post.blog, post) %>
-        <%= link_to 'Destroy', [post.blog, post], method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+    <div class="well">
+      <h2><%= post.title %></h2>
+      <p><%= markdown(post.body) %></p>
+    </div>
+    <%= link_to 'Show', blog_post_path(post.blog, post), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Edit', edit_blog_post_path(post.blog, post), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Destroy', [post.blog, post], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
     <% end %>
-
-<br>
-
-<%= link_to 'New Post', new_blog_post_path %>
+  </div>
