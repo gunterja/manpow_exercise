@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="">
+  <div class="form-group">
     <p>
       <%= f.label :title %><br>
-      <%= f.text_field :title, :size => 80, placeholder: "Enter the title of your Post here!" %>
+      <%= f.text_field :title, :size => 80, placeholder: "Enter the title of your Post here!", class: 'form-control' %>
     </p>
   </div>
 
-  <div class="">
+  <div class="form-group">
     <p>
       <%= f.label :body, "Post" %><br>
-      <%= f.text_area :body, :rows => 20, :cols => 80, placeholder: "Your content goes here. Feel free to use markdown to style things up a bit." %>
+      <%= f.text_area :body, :rows => 20, :cols => 80, placeholder: "Your content goes here. Feel free to use markdown to style things up a bit.", class: 'form-control' %>
     </p>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
